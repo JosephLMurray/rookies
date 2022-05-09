@@ -1,4 +1,5 @@
 DROP DATABASE IF EXISTS rookies_db;
+
 CREATE DATABASE rookies_db;
 
 USE rookies_db;
@@ -28,3 +29,4 @@ CREATE TABLE players (
     REFERENCES teams(id),
     PRIMARY KEY (id)
 );
+
