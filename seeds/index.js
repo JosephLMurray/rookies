@@ -1,13 +1,15 @@
 const sequelize = require('../config/connection');
-const seedA = require('./aData');
-const seedB = require('./bData');
+
+// const teamData = require('./teamData.json');
+const seedPlayers = require('./newPlayers');
+const seedTeams = require('./teamData');
 
 const seedAll = async () => {
   await sequelize.sync({ force: true });
 
-  await seedA();
+  await seedPlayers();
 
-  await seedB();
+  await seedTeams();
 
   process.exit(0);
 };
