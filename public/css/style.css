@@ -16,3 +16,13 @@
   }
   /* ... */
 }
+
+.rosterCard {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.parentDiv {
+  width: 100vw;
+  height: 100vh;
+}
