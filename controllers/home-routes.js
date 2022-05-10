@@ -1,9 +1,10 @@
 const router = require('express').Router();
-const { Gallery, Painting } = require('../models');
+
+const { User, Player, Team, Roster } = require('../models');
 // Import the custom middleware
 const withAuth = require('../utils/auth');
 
-// GET all galleries for homepage
+// GET homepage
 router.get('/', (req, res) => {
   try {
     res.render('homepage');
