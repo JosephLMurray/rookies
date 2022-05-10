@@ -15,3 +15,9 @@
 .flip-card-back {
     transform: rotateY(180deg);
 }
+
+footer {
+    position:fixed; 
+    bottom: 0;
+    z-index: 1000;
+    }
