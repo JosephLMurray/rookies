@@ -6,10 +6,9 @@ const SequelizeStore = require('connect-session-sequelize')(session.Store);
 const routes = require('./controllers');
 const helpers = require('./utils/helpers');
 
-var mysql2 = require('mysql2');
+var mysql = require('mysql2');
 
 const sequelize = require('./config/connection');
-
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -38,5 +37,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(routes);
 
 sequelize.sync({ force: false }).then(() => {
-  app.listen(PORT, () => console.log('`\nVisit http://localhost:3001 and create an account! Or log in!`'));
+  app.listen(PORT, () =>
+    console.log(
+      '`\nServer running on port ${PORT}. Visit http://localhost:3001 and create an account!`'
+    )
+  );
 });
