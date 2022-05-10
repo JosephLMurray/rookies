@@ -18,6 +18,13 @@ Roster.init(
         model: 'User',
         key: 'id'
       }
+    },
+    playerID: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'Player',
+        key: 'PlayerID'
+      }
     }
   },
   {
