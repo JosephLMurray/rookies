@@ -2,7 +2,7 @@
   "name": "boiler",
   "version": "1.0.0",
   "description": "",
-  "main": "src/index.js",
+  "main": "server.js",
   "scripts": {
     "start:dev": "nodemon",
     "format:check": "prettier --check .",
@@ -28,12 +28,8 @@
     "eslint-plugin-promise": "^6.0.0",
     "jest": "^27.5.1",
     "nodemon": "^2.0.15",
-<<<<<<< HEAD
     "prettier": "^2.6.2",
     "tailwindcss": "^3.0.24"
-=======
-    "prettier": "^2.6.2"
->>>>>>> d66d50f4c641b6502a29791bab57b9af7eef2127
   },
   "nodemonConfig": {
     "watch": [

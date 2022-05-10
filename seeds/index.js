@@ -2,6 +2,7 @@ const sequelize = require('../config/connection');
 
 
 
+
 const seedPlayers = require('./newPlayers');
 const seedTeams = require('./teamData');
 
@@ -11,9 +12,10 @@ const seedAll = async () => {
   await sequelize.sync({ force: true });
 
   await seedUsers();
-  await seedTeams();
-  await seedPlayers();
 
+  await seedTeams();
+
+  await seedPlayers();
 
   process.exit(0);
 };
