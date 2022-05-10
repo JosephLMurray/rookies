@@ -30,3 +30,21 @@ CREATE TABLE players (
     PRIMARY KEY (id)
 );
 
+<<<<<<< HEAD
+
+CREATE TABLE IF NOT EXISTS `users` (
+  `id` int(11) NOT NULL,
+  `userName` varchar(50) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `email` varchar(100) NOT NULL
+)
+ENGINE=InnoDB AUTO_INCREMENT=2
+DEFAULT CHARSET=utf8;
+
+INSERT INTO `users` (`id`, `userName`, `password`, `email`)
+VALUES 
+(1, 'test', 'test', 'test@test.com');
+ALTER TABLE `users` ADD PRIMARY KEY (`id`);
+ALTER TABLE `users` MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+=======
+>>>>>>> d66d50f4c641b6502a29791bab57b9af7eef2127
