@@ -1,4 +1,5 @@
 DROP DATABASE IF EXISTS rookies_db;
+
 CREATE DATABASE rookies_db;
 
 USE rookies_db;
@@ -29,6 +30,7 @@ CREATE TABLE players (
     PRIMARY KEY (id)
 );
 
+<<<<<<< HEAD
 
 CREATE TABLE IF NOT EXISTS `users` (
   `id` int(11) NOT NULL,
@@ -44,3 +46,5 @@ VALUES
 (1, 'test', 'test', 'test@test.com');
 ALTER TABLE `users` ADD PRIMARY KEY (`id`);
 ALTER TABLE `users` MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+=======
+>>>>>>> d66d50f4c641b6502a29791bab57b9af7eef2127
