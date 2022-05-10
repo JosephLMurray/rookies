@@ -11,11 +11,7 @@ Player.init(
       primaryKey: true
     },
     TeamID: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: 'Team',
-        key: 'TeamID'
-      }
+      type: DataTypes.INTEGER
     },
     Team: {
       type: DataTypes.STRING
@@ -55,13 +51,6 @@ Player.init(
     },
     PhotoUrl: {
       type: DataTypes.STRING
-    },
-    rosterID: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: 'Roster',
-        key: 'id'
-      }
     }
   },
   {

@@ -4,6 +4,7 @@ CREATE DATABASE rookies_db;
 
 USE rookies_db;
 
+
 CREATE TABLE teams (
     id INT NOT NULL,
     city VARCHAR (30) NOT NULL,
@@ -29,3 +30,4 @@ CREATE TABLE players (
     REFERENCES teams(id),
     PRIMARY KEY (id)
 );
+

@@ -1,26 +1,60 @@
 const sequelize = require('../config/connection');
-<<<<<<< HEAD
+
+
 const seedA = require('./aData');
 const seedB = require('./bData');
-=======
+
+
+const { Player } = require('../models');
+
 
 // const teamData = require('./teamData.json');
 const seedPlayers = require('./newPlayers');
 const seedTeams = require('./teamData');
->>>>>>> d66d50f4c641b6502a29791bab57b9af7eef2127
+
+
 
 const seedAll = async () => {
   await sequelize.sync({ force: true });
 
-<<<<<<< HEAD
+
   await seedA();
 
   await seedB();
-=======
+
   await seedPlayers();
 
   await seedTeams();
->>>>>>> d66d50f4c641b6502a29791bab57b9af7eef2127
+
+
+const seedUsers = require('./userData');
+
+const singlePlayer = {
+  PlayerID: 10000001,
+  TeamID: 17,
+  Team: 'DET',
+  PositionCategory: 'P',
+  Position: 'SP',
+  FirstName: 'Chase',
+  LastName: 'Anderson',
+  BatHand: 'R',
+  ThrowHand: 'R',
+  Height: 73,
+  Weight: 200,
+  BirthCity: 'Wichita Falls',
+  BirthState: 'TX',
+  BirthCountry: 'USA',
+  PhotoUrl:
+    'https://s3-us-west-2.amazonaws.com/static.fantasydata.com/headshots/mlb/low-res/10000001.png'
+};
+
+const seedAll = async () => {
+  await sequelize.sync({ force: true });
+  // await Player.create(singlePlayer);
+  await seedUsers();
+  await seedTeams();
+  await seedPlayers();
+
 
   process.exit(0);
 };
