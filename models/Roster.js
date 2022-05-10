@@ -6,7 +6,7 @@ class Roster extends Model {}
 
 Roster.init(
   {
-    id: {
+    rosterID: {
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
@@ -15,15 +15,8 @@ Roster.init(
     userID: {
       type: DataTypes.INTEGER,
       references: {
-        model: 'User',
+        model: 'user',
         key: 'id'
-      }
-    },
-    playerID: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: 'Player',
-        key: 'PlayerID'
       }
     }
   },
