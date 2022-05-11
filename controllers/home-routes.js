@@ -27,14 +27,13 @@ router.get('/', (req, res) => {
 
 
 
-router.get('dashboard', withAuth, (req, res) => {
+router.get('/dashboard', withAuth, (req, res) => {
   try {
     res.render('dashboard', {
-      players: req.session.players
+      // players: req.session.players
     });
   } catch (err) {
     res.status(500).json(err);
-
   }
 });
 
