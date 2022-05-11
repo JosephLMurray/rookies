@@ -2,6 +2,7 @@ const router = require('express').Router();
 
 const withAuth = require('../../utils/auth');
 const { Roster } = require('../../models');
+const { render } = require('express/lib/response');
 
 router.post('/', withAuth, async (req, res) => {
   try {

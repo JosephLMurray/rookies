@@ -1,11 +1,11 @@
 <div class='dropdown'>
-  <button onclick='showList()' class='dropbtn'>Dropdown</button>
-  <div id='myDropdown' class='dropdown-content'>
+  <button onclick='showTeam()' class='dropbtn'>By Team</button>
+  <div id='teamSearch' class='dropdown-content'>
     <input
       type='text'
       placeholder='Search..'
-      id='myInput'
-      onkeyup='filterSearch()'
+      id='team'
+      onkeyup='filterTeam()'
     />
     <a href='#/team/1'>LAD</a>
     <a href='#/team/2'>CIN</a>
@@ -37,6 +37,40 @@
     <a href='#/team/32'>MIL</a>
     <a href='#/team/33'>SD</a>
     <a href='#/team/35'>WSH</a>
+  </div>
+</div>
+
+<div class='dropdown'>
+  <button onclick='showPosition()' class='dropbtn'>By Position</button>
+  <div id='positionSearch' class='dropdown-content'>
+    <input
+      type='text'
+      placeholder='Search..'
+      id='position'
+      onkeyup='positionSearch()'
+    />
+    <a href='#/player/OF'>Outfielder</a>
+    <a href='#/player/IF'>Infielder</a>
+    <a href='#/player/P'>Pitcher</a>
+  </div>
+</div>
+
+<div class='dropdown'>
+  <button onclick='showPlayers()' class='dropbtn'>By Player</button>
+  <div id='playerSearch' class='dropdown-content'>
+    <input
+      type='text'
+      placeholder='Search..'
+      id='player'
+      onkeyup='playerSearch()'
+    />
+    {{!-- {{#each players as |player|}}
+      <a href='#/player/{{player.PlayerID}}'>{{player.FirstName}}
+        {{player.LastName}}</a>
+    {{/each}} --}}
+    <a href='#/player/10000020'>Robbie Ray</a>
+    <a href='#/player/10000014'>Daniel Hudson</a>
+    <a href='#/player/10000029'>Nick Ahmed</a>
   </div>
 </div>
 

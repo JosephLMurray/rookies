@@ -1,69 +1,53 @@
-const router = require('express').Router();
-
-const { User, Player, Team, Roster } = require('../models');
-// Import the custom middleware
 const withAuth = require('../utils/auth');
+const router = require('express').Router();
+const { User, Player } = require('../models');
+const res = require('express/lib/response');
+
+router.get('/', (req, res) => {
+  res.render('homepage');
+});
+
 
 // GET homepage
 router.get('/', (req, res) => {
   try {
-    res.render('homepage');
+    res.render('homepage', {loggedIn: req.session.loggedIn});  
   } catch (err) {
-    console.log(err);
-    res.status(500).json(err);
+    res.status(500).json(err)
   }
 });
 
-// GET one gallery
-// Use the custom middleware before allowing the user to access the gallery
-router.get('/gallery/:id', withAuth, async (req, res) => {
+router.get('/', (req, res) => {
   try {
-    const dbGalleryData = await Gallery.findByPk(req.params.id, {
-      include: [
-        {
-          model: Painting,
-          attributes: [
-            'id',
-            'title',
-            'artist',
-            'exhibition_date',
-            'filename',
-            'description'
-          ]
-        }
-      ]
+    res.render('homepage', {logged_out: req.session.logged_out});  
+  } catch (err) {
+    res.status(500).json(err)
+  }
+});
+
+
+
+router.get('teamSelect', withAuth, (req, res) => {
+  try {
+    res.render('teamSelect', {
+      players: req.session.players
     });
-
-    const gallery = dbGalleryData.get({ plain: true });
-    res.render('gallery', { gallery, loggedIn: req.session.loggedIn });
   } catch (err) {
-    console.log(err);
     res.status(500).json(err);
-  }
-});
 
-// GET one painting
-// Use the custom middleware before allowing the user to access the painting
-router.get('/painting/:id', withAuth, async (req, res) => {
-  try {
-    const dbPaintingData = await Painting.findByPk(req.params.id);
-
-    const painting = dbPaintingData.get({ plain: true });
-
-    res.render('painting', { painting, loggedIn: req.session.loggedIn });
-  } catch (err) {
-    console.log(err);
-    res.status(500).json(err);
   }
 });
 
 router.get('/login', (req, res) => {
-  if (req.session.loggedIn) {
-    res.redirect('/');
-    return;
+  try {
+    if (req.session.loggedIn) {
+      return;
+    }
+    res.render('homepage');
+  } catch (err) {
+    res.status(500).json(err);
   }
+})
 
-  res.render('login');
-});
 
 module.exports = router;

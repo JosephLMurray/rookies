@@ -1,104 +1,75 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="https://cdn.tailwindcss.com"></script>
-<link rel="stylesheet" href="./public/css/style.css">
-  <title>Rookies main page</title>
-</head>
-<body>
 
-  
-
-<div class="relative py-16
-before:absolute before:inset-0 before:w-full before:h-[50%] before:bg-gray-200">
-<div class="relative container m-auto px-6 text-gray-500 md:px-12 xl:px-40">
-
-<div class="m-auto space-y-8 md:w-8/12 lg:w-full">
-<!-- <img src="" loading="lazy" class="w-36 ml-4" alt=""> -->
-<div class="rounded-xl border bg-opacity-50 backdrop-blur-2xl bg-white shadow-xl">
-<div class="lg:grid lg:grid-cols-2">
-    <div class="rounded-lg lg:block" hidden>
-        <video src="./public/images/catcher-06.mp4" class="p-8 min-w-full min-h-full" loading="lazy" height="" width="" alt="music mood">
-    </div>
-    <div class="p-6 sm:p-16">
-        <h2 class="mb-8 text-2xl text-cyan-900 font-bold">Sign in to your account</h2>
-        <form action="" class="space-y-8" id = "login-form">
-            <div class="space-y-2">
-                <label for="email-login" class="text-gray-700">Email</label>
-                <input  type="email" name="email" id="email-login" 
-class="block w-full px-4 py-3 rounded-md border border-gray-300 text-gray-600 transition duration-300
-focus:ring-2 focus:ring-sky-300 focus:outline-none
-invalid:ring-2 invalid:ring-red-400"
-                >
-            </div>
-
-            <div>
-                <div class="flex items-center justify-between">
-                    <label for="password-login" class="text-gray-700">Password</label>
-                    <button class="p-2 -mr-2" type="reset">
-                        <!-- <span class="text-sm text-sky-500">Forgot your password ?</span> -->
-                    </button>
-                </div>
-                <input  type="password" name="pwd" id="password-login" 
-                        class="block w-full px-4 py-3 rounded-md border border-gray-300 text-gray-600 transition duration-300
-                            focus:ring-2 focus:ring-sky-300 focus:outline-none
-                            invalid:ring-2 invalid:ring-red-400"
-                >
-            </div>
-
-            <button type="submit" 
-                    class="w-full py-3 px-6 rounded-md bg-sky-600
-                        focus:bg-sky-700 active:bg-sky-500">
-                <span class="text-white">Sign In</span>
+  <div id ="forHide" class = >
+      <div
+        class="relative px-4 xl:px-0 container mx-auto md:flex items-center gap-8 min-h-screen hidden "
+      >
+        <div class="text-color w-full md:w-1/3 pt-16 lg:pt-32 xl:pt-12 p-6">
+          <h1
+            class="text-4xl md:text-4xl lg:text-6xl w-11/12 lg:w-11/12 xl:w-full xl:text-6xl text-gray-500 font-extrabold f-f-l"
+          >
+            Build, Test, and Play!
+          </h1>
+          <div class="f-f-r text-base lg:text-base pb-20 sm:pb-0 pt-10 xl:pt-6">
+            <h2>
+              We would love for you to start your process with MLB Drafting! Simply, click, add and view your team. Read the player's stats and information! 
+            </h2>
+          </div>
+          <div class="lg:flex p-8" > 
+            <button id = "startBtn"
+              class="hidden md:block hover:opacity-90 text-base w-full xl:text-base xl:w-6/12 mt-4 xl:mt-8 f-f-r py-4 bg-indigo-700 text-white font-bold focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 rounded-lg"
+            >
+              Build Now
             </button>
+          </div>
+        </div>
+        <img
+          class="w-full mt-8 md:mt-0 object-fill md:w-2/3 md:-ml-4 lg:-ml-4 xl:ml-0 rounded-md	"
+          src="images/Capture.PNG"
+        />
+      <div class ="p-8" >
+        <button id = "startBtn"
+          class="md:hidden hover:opacity-90 text-base w-full xl:text-base xl:w-6/12 mt-4 xl:mt-8 f-f-r py-4 bg-indigo-700 text-white font-bold focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 rounded-lg"
+        >
+          Build Now
+        </button>
 
-            <p class="border-t pt-6 text-sm">
-                Don't have an account ? 
-                <a href="#" class="text-sky-500">Sign up</a>
-            </p>
-        
-        
-
-        </form>
+      </div>
     </div>
-</div>
-</div>
+</div> 
+
+    <div class = "loginForm hidden flex-wrap	">
+
+      {{>auth/login}}
+
+    </div>
+
+    <style>
+      
+      
+      
+      .top-100 {
+        animation: slideDown 0.5s ease-in-out;
+      }
+
+      @keyframes slideDown {
+        0% {
+          top: -50%;
+        }
+
+        100% {
+          top: 0;
+        }
+      }
+
+      * {
+        outline: none !important;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        -webkit-tap-highlight-color: transparent;
+      }
+    </style>
 
 
 
 
 
 
-
-<form id="signup-form">
-  <label>Username</label>
-    <input type="text" id ="username-signup"><br>
-  <label>Email:</label>
-  <input type="email" id ="email-signup"><br>
-  <label>Password:</label>
-  <input type="password" id ="password-signup">
-    <button type = "submit">Sign Up</button>  
-</form>
-
-<div class="text-center space-x-4">
-<span>&copy; Rookies</span>
-<!-- <a href="#" class="text-sm hover:text-sky-900">Contact</a>
-<a href="#" class="text-sm hover:text-sky-900">Privacy & Terms</a> -->
-</div>
-</div>
-</div>
-</div>
-
-
-
-
-
-
-
-<script src="./public/js/login.js"></script>
-<script src="./public/js/logout.js"></script>
-</body>
-</html>

@@ -49,3 +49,9 @@
     transform: rotateY(180deg);
 
 }
+
+
+footer {
+  bottom: 0;
+  z-index: 1000;
+}
