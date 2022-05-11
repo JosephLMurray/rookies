@@ -16,10 +16,20 @@ console.log('testing123...');
 
 const startBtn = document.getElementById("startBtn");
 const forHide = document.querySelector("forHide");
- const loginForm = document.querySelector(".loginForm")
+const loginForm = document.querySelector(".loginForm")
 $("#startBtn").click(function(e) {
 
   e.preventDefault();
     $("#forHide").hide();
   loginForm.style.display = "block"
+});
+
+const showRoster = document.getElementById("showRoster");
+const newRoster = document.getElementById("newRoster");
+const mainHero = document.getElementById("mainHero");
+const teamRoster = document.querySelector(".team")
+$('#showRoster').click(function(e) {
+  e.preventDefault();
+    $("#mainHero").hide();
+      teamRoster.style.display = "block";
 })
