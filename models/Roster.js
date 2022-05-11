@@ -18,6 +18,9 @@ Roster.init(
         model: 'user',
         key: 'id'
       }
+    },
+    name: {
+      type: DataTypes.STRING
     }
   },
   {
