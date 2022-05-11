@@ -1,11 +1,8 @@
 const sequelize = require('../config/connection');
 
-
-
-
+const seedRoster = require('./rosterData');
 const seedPlayers = require('./newPlayers');
 const seedTeams = require('./teamData');
-
 const seedUsers = require('./userData');
 
 const seedAll = async () => {
@@ -16,6 +13,8 @@ const seedAll = async () => {
   await seedTeams();
 
   await seedPlayers();
+
+  await seedRoster();
 
   process.exit(0);
 };

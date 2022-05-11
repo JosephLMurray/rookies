@@ -7,22 +7,17 @@ Roster.belongsTo(User, {
   foreignKey: 'userID'
 });
 
-// Player.belongsTo(Team, {
-//   foreignKey: 'TeamID'
-// });
-
-// Team.hasMany(Player, {
-//   foreignKey: 'TeamID',
-//   onDelete: 'CASCADE'
-// });
-
 User.hasMany(Roster, {
   foreignKey: 'userID',
   onDelete: 'CASCADE'
 });
 
 Player.belongsToMany(Roster, {
-  through: 'PlayerRoster'
+  through: 'playerroster'
+});
+
+Roster.belongsToMany(Player, {
+  through: 'playerroster'
 });
 
 module.exports = { User, Player, Roster, Team };
