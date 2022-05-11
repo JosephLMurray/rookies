@@ -14,7 +14,8 @@ User.init(
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
-      autoIncrement: true,
+
+      autoIncrement: true
     },
     name: {
       type: DataTypes.STRING,
@@ -32,9 +33,10 @@ User.init(
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        len: [8],
-      },
-    },
+
+        len: [6]
+      }
+    }
   },
   {
     hooks: {

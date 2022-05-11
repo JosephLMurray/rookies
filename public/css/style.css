@@ -1,3 +1,33 @@
+
+
+
+
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .card {
+    background-color: theme('colors.purple');
+    border-radius: theme('borderRadius.lg');
+    padding: theme('spacing.6');
+    box-shadow: theme('boxShadow.xl');
+  }
+  /* ... */
+}
+
+.rosterCard {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.parentDiv {
+  width: 100vw;
+  height: 100vh;
+}
+
 .flip-card {
     transition: transform 1s;
     transform-style: preserve-3d;
@@ -14,10 +44,11 @@
 
 .flip-card-back {
     transform: rotateY(180deg);
+
 }
 
+
 footer {
-    position:fixed; 
-    bottom: 0;
-    z-index: 1000;
-    }
+  bottom: 0;
+  z-index: 1000;
+}
