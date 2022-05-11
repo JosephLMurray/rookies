@@ -27,14 +27,13 @@ router.get('/', (req, res) => {
 
 
 
-router.get('teamSelect', withAuth, (req, res) => {
+router.get('/dashboard', withAuth, (req, res) => {
   try {
-    res.render('teamSelect', {
-      players: req.session.players
+    res.render('dashboard', {
+      // players: req.session.players
     });
   } catch (err) {
     res.status(500).json(err);
-
   }
 });
 
@@ -43,7 +42,7 @@ router.get('/login', (req, res) => {
     if (req.session.loggedIn) {
       return;
     }
-    res.render('homepage');
+    res.render('dashboard');
   } catch (err) {
     res.status(500).json(err);
   }
