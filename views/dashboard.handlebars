@@ -1,0 +1,37 @@
+
+  <div class="hero min-h-screen bg-base-200" id ="mainHero">
+    <div class="hero-content flex-col lg:flex-row-reverse">
+      <img src="../public/images/baseball-clipart-12.png" class="max-w-sm rounded-lg shadow-2xl" />
+      <div>
+        <h1 class="text-5xl font-bold">Play Ball!</h1>
+        <p class="py-6">Either create a new team, or view/edit your team!</p>
+        {{!-- <button 
+        class="btn btn-wide newRosterBtn"
+        id = "newRoster"
+        >New Roster</button> --}}
+
+        <button 
+        class="btn btn-wide viewRosterBtn"
+        id = "showRoster"
+        >View Roster</button>
+      </div>
+    </div>
+  </div>
+
+  <div clas = "team hidden">
+  {{#each players}}
+    <div class="card w-96 bg-base-100 shadow-xl">
+      <figure class="px-10 pt-10">
+        <img src="{{PhotoUrl}}" alt="Shoes" class="rounded-xl" />
+      </figure>
+      <div class="card-body items-center text-center">
+        <h2 class="card-title">Name: {{FirstName}} {{LastName}}</h2>
+        <p>Position:{{Position}}</p>
+        <p>Team: {{Team}}</p>
+        <p>Bat Hand: {{BatHand}}</p>
+        <div class="card-actions">
+          <button class="btn btn-primary">Buy Now</button>
+        </div>
+      </div>
+      {{/each}}
+    </div>
