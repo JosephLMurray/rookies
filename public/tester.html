@@ -1,4 +1,4 @@
-<html lang="en">
+git add<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -143,7 +143,7 @@
         </div>
       </div>
       <!-- {{{body}}} -->
-      <div class="dropdown">
+      <div class="dropdown bg-base-100">
         <button onclick="showTeam()" class="dropbtn">By Team</button>
         <div id="teamSearch" class="dropdown-content">
           <input
@@ -185,7 +185,7 @@
         </div>
       </div>
 
-      <div class="dropdown">
+      <div class="dropdown bg-base-100"">
         <button onclick="showPosition()" class="dropbtn">By Position</button>
         <div id="positionSearch" class="dropdown-content">
           <input
@@ -200,7 +200,7 @@
         </div>
       </div>
 
-      <div class="dropdown">
+      <div class="dropdown bg-base-100"">
         <button onclick="showPlayers()" class="dropbtn">By Player</button>
         <div id="playerSearch" class="dropdown-content">
           <input
@@ -219,6 +219,35 @@
           <a href="#/player/10000029">Nick Ahmed</a>
         </div>
       </div>
+
+
+
+      <section class="parentDiv">
+        {{#each data}}
+        <div class="grid-cols-auto flex flex-wrap justify-center justify-around">
+        <div class="pb-5 pt-5 flip-card-container">
+          <div class="flip-card">
+            <div class="max-w-sm rounded overflow-hidden shadow-lg flip-card-front">
+                <!-- <img class="w-full" src="../images/pitch.catch.png" alt="Sunset in the mountains"> -->
+                <img class="w-full" src="{{newPlayers.PhotoUrl}}">
+                <div class="px-6 py-4 flip-card-front">
+                    <div class="font-bold text-xl mb-2">{{newPlayers.FirstName}} {{newPlayers.LastName}}</div>
+                        <p>MLB Teams: {{Team}}</p>
+                        <p>Bats: {{BatHand}}   Throws: {{ThrowHand}}</p>
+                        <p>Position: {{Position}}</p>
+                    </div>
+                     <div class="px-6 pt-4 pb-2">
+                        <span
+                            class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#remove</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+
+        {{/each}}
+    </section>
+    
 
       <script src="./js/search.js"></script>
 
