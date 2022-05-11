@@ -13,7 +13,11 @@ User.hasMany(Roster, {
 });
 
 Player.belongsToMany(Roster, {
-  through: 'PlayerRoster'
+  through: 'playerroster'
+});
+
+Roster.belongsToMany(Player, {
+  through: 'playerroster'
 });
 
 module.exports = { User, Player, Roster, Team };
