@@ -1,6 +1,6 @@
 const { Roster } = require('../models');
 
-const teamData = [
+const rosterData = [
   {
     rosterID: 1,
     userID: 1,
@@ -9,15 +9,15 @@ const teamData = [
   {
     rosterID: 2,
     userID: 2,
-    name: 'Rookies'
+    name: 'Stinkers'
   },
   {
     rosterID: 3,
     userID: 3,
-    name: 'Stinkers'
+    name: 'Rookies'
   }
 ];
 
-const seedRosters = () => Roster.bulkCreate(teamData);
+const seedRoster = () => Roster.bulkCreate(rosterData);
 
-module.exports = seedRosters;
+module.exports = seedRoster;

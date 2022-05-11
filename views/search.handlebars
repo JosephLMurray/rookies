@@ -1,0 +1,77 @@
+<div class='dropdown'>
+  <button onclick='showTeam()' class='dropbtn'>By Team</button>
+  <div id='teamSearch' class='dropdown-content'>
+    <input
+      type='text'
+      placeholder='Search..'
+      id='team'
+      onkeyup='filterTeam()'
+    />
+    <a href='#/team/1'>LAD</a>
+    <a href='#/team/2'>CIN</a>
+    <a href='#/team/3'>TOR</a>
+    <a href='#/team/4'>PIT</a>
+    <a href='#/team/5'>KC</a>
+    <a href='#/team/9'>CHC</a>
+    <a href='#/team/10'>CLE</a>
+    <a href='#/team/11'>TB</a>
+    <a href='#/team/12'>PHI</a>
+    <a href='#/team/13'>SEA</a>
+    <a href='#/team/14'>ARI</a>
+    <a href='#/team/15'>SF</a>
+    <a href='#/team/16'>CHW</a>
+    <a href='#/team/17'>DET</a>
+    <a href='#/team/18'>NYM</a>
+    <a href='#/team/19'>BAL</a>
+    <a href='#/team/20'>MIN</a>
+    <a href='#/team/21'>LAA</a>
+    <a href='#/team/22'>MIA</a>
+    <a href='#/team/23'>COL</a>
+    <a href='#/team/24'>OAK</a>
+    <a href='#/team/25'>BOS</a>
+    <a href='#/team/26'>ATL</a>
+    <a href='#/team/28'>TEX</a>
+    <a href='#/team/29'>NYY</a>
+    <a href='#/team/30'>HOU</a>
+    <a href='#/team/31'>STL</a>
+    <a href='#/team/32'>MIL</a>
+    <a href='#/team/33'>SD</a>
+    <a href='#/team/35'>WSH</a>
+  </div>
+</div>
+
+<div class='dropdown'>
+  <button onclick='showPosition()' class='dropbtn'>By Position</button>
+  <div id='positionSearch' class='dropdown-content'>
+    <input
+      type='text'
+      placeholder='Search..'
+      id='position'
+      onkeyup='positionSearch()'
+    />
+    <a href='#/player/OF'>Outfielder</a>
+    <a href='#/player/IF'>Infielder</a>
+    <a href='#/player/P'>Pitcher</a>
+  </div>
+</div>
+
+<div class='dropdown'>
+  <button onclick='showPlayers()' class='dropbtn'>By Player</button>
+  <div id='playerSearch' class='dropdown-content'>
+    <input
+      type='text'
+      placeholder='Search..'
+      id='player'
+      onkeyup='playerSearch()'
+    />
+    {{!-- {{#each players as |player|}}
+      <a href='#/player/{{player.PlayerID}}'>{{player.FirstName}}
+        {{player.LastName}}</a>
+    {{/each}} --}}
+    <a href='#/player/10000020'>Robbie Ray</a>
+    <a href='#/player/10000014'>Daniel Hudson</a>
+    <a href='#/player/10000029'>Nick Ahmed</a>
+  </div>
+</div>
+
+<script src='./js/search.js'></script>
