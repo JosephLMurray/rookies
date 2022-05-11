@@ -1,10 +1,10 @@
 const router = require('express').Router();
 const { Player, User } = require('../../models')
 
-// router.get('/', (req, res) => {
-//   Player.findAll({})
-//   .then(data => res.json(data))
-// })
+router.get('/', (req, res) => {
+  Player.findAll({})
+  .then(data => res.json(data))
+})
 
 
 
