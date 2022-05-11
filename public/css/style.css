@@ -28,8 +28,11 @@
   height: 100vh;
 }
 
+.flip-card-container{
+    perspective: 2000px;
+}
 .flip-card {
-    transition: transform 1s;
+    transition: transform 1.25s;
     transform-style: preserve-3d;
 }
 

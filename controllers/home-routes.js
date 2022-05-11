@@ -8,6 +8,7 @@ router.get('/', (req, res) => {
 });
 
 
+// GET homepage
 router.get('/', (req, res) => {
   try {
     res.render('homepage', {loggedIn: req.session.loggedIn});  
