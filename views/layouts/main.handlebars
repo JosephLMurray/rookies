@@ -6,12 +6,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://cdn.jsdelivr.net/npm/daisyui@2.14.3/dist/full.css" rel="stylesheet" type="text/css" />
   <script src="https://cdn.tailwindcss.com"></script>
+  
   <link rel="stylesheet" type="text/css" href="/css/style.css" />
+  
   <title>Document</title>
 </head>
 <body class="bg-gray-900">
   <nav class = "navigator">
-    {{> nav/unAuthdNav}}
+    {{> nav/nav}}
   </nav>  
 
 <main>
@@ -59,6 +61,11 @@
 </footer>
 
   {{!-- {{ #if loggedIn}} --}}
+  <script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+  crossorigin="anonymous"></script>
+  <script type="text/javascript" src="./js/script.js"></script>
   <script src="./js/logout.js"></script>
   {{!-- {{ /if }} --}}
 </body>

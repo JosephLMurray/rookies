@@ -1,8 +1,9 @@
 
+  <div id ="forHide" class = >
       <div
-        class="relative px-4 xl:px-0 container mx-auto md:flex items-center gap-8 min-h-screen		 "
+        class="relative px-4 xl:px-0 container mx-auto md:flex items-center gap-8 min-h-screen hidden "
       >
-        <div class="text-color w-full md:w-1/3 pt-16 lg:pt-32 xl:pt-12 p-8">
+        <div class="text-color w-full md:w-1/3 pt-16 lg:pt-32 xl:pt-12 p-6">
           <h1
             class="text-4xl md:text-4xl lg:text-6xl w-11/12 lg:w-11/12 xl:w-full xl:text-6xl text-gray-500 font-extrabold f-f-l"
           >
@@ -13,8 +14,8 @@
               We would love for you to start your process with MLB Drafting! Simply, click, add and view your team. Read the player's stats and information! 
             </h2>
           </div>
-          <div class="lg:flex p-8">
-            <button
+          <div class="lg:flex p-8" > 
+            <button id = "startBtn"
               class="hidden md:block hover:opacity-90 text-base w-full xl:text-base xl:w-6/12 mt-4 xl:mt-8 f-f-r py-4 bg-indigo-700 text-white font-bold focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 rounded-lg"
             >
               Build Now
@@ -23,17 +24,29 @@
         </div>
         <img
           class="w-full mt-8 md:mt-0 object-fill md:w-2/3 md:-ml-4 lg:-ml-4 xl:ml-0 rounded-md	"
-          src="/images/Capture.PNG"
+          src="images/Capture.PNG"
         />
-      <div class ="p-8">
-        <button
+      <div class ="p-8" >
+        <button id = "startBtn"
           class="md:hidden hover:opacity-90 text-base w-full xl:text-base xl:w-6/12 mt-4 xl:mt-8 f-f-r py-4 bg-indigo-700 text-white font-bold focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 rounded-lg"
         >
           Build Now
         </button>
+
       </div>
     </div>
+</div> 
+
+    <div class = "loginForm hidden flex-wrap	">
+
+      {{>auth/login}}
+
+    </div>
+
     <style>
+      
+      
+      
       .top-100 {
         animation: slideDown 0.5s ease-in-out;
       }
