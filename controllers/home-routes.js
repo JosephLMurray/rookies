@@ -46,6 +46,14 @@ router.get('/login', (req, res) => {
   }
 });
 
+router.get('/search', withAuth, async (req, res) => {
+  try {
+    res.render('search');
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 router.get('/roster/:id', withAuth, async (req, res) => {
   try {
     // const rosterData = await Roster.findByPk(req.params.id, {
@@ -398,7 +406,6 @@ router.get('/roster/:id', withAuth, async (req, res) => {
     ];
     res.render('roster', {
       rosterData,
-      layout: 'dashboard',
       loggedIn: true
     });
   } catch (err) {

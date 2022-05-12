@@ -18,10 +18,10 @@ router.get('/users:PlayerID', async (req, res) => {
   }
 });
 
-router.get('/', async (req, res) => {
+router.get('/:id', async (req, res) => {
   try {
     const playerData = await Player.findAll({
-      where: { PositionCategory: req.body.position }
+      where: { PositionCategory: req.params.id }
     });
     const players = playerData.map((play) => play.get({ plain: true }));
     res.json(players);
