@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@2.14.3/dist/full.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" type="text/css" href="/css/style.css" />
+  <title>Document</title>
+</head>
+
+
+  <div class = 'parentDiv flex-wrap	'>
+    <div class='dropdown justify-center content-center	'>
+      <button  onclick='showPosition()' class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg dropbtn">By Position</button>
+
+      <div id='positionSearch' class='dropdown-content'>
+        <input
+          type='text'
+          placeholder='Search..'
+          id='position'
+          onkeyup='positionSearch()'
+        />
+        <ul>
+          <li>OF</li>
+          <li>IF</li>
+          <li>P</li>
+      </ul>
+      </div>
+    </div>
+        <button onClick ="getResults()" class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg">Get Results</button>
+      </div>
+    </div>
+
+
+    <div id = "accordion">
+
+    </div>
+
+<script src='./js/search.js'></script>
+
+
+</body>
+</html>

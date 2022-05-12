@@ -1,7 +1,8 @@
 const router = require('express').Router();
+const res = require('express/lib/response');
 
 const withAuth = require('../utils/auth');
-const { Roster } = require('../models');
+const { User, Roster, Player } = require('../models');
 
 router.get('/', (req, res) => {
   res.render('homepage');
@@ -24,16 +25,11 @@ router.get('/', (req, res) => {
   }
 });
 
-router.get('/dashboard', withAuth, async (req, res) => {
+router.get('/dashboard', withAuth, (req, res) => {
   try {
-    console.log(req.session.user_id);
-    const rosters = await Roster.findAll({
-      where: {
-        userID: req.session.user_id
-      }
+    res.render('dashboard', {
+      players: req.session.players
     });
-    console.log(rosters);
-    res.render('rosters', { rosters, layout: 'dashboard', loggedIn: true });
   } catch (err) {
     res.status(500).json(err);
   }

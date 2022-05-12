@@ -6,3 +6,4 @@
   routes[m
   seedmodels[m
   seeds[m
+<!-- on click get results  -->
