@@ -20,7 +20,9 @@ router.get('/users:PlayerID', async (req, res) => {
 
 router.get('/', async (req, res) => {
   try {
-    const playerData = await Player.findAll({});
+    const playerData = await Player.findAll({
+      where: { position: req.body.position }
+    });
     const players = playerData.map((play) => play.get({ plain: true }));
     res.json(players);
   } catch (err) {
