@@ -1,4 +1,4 @@
-<div class='dropdown'>
+{{! <div class='dropdown'>
   <button onclick='showTeam()' class='dropbtn'>By Team</button>
   <div id='teamSearch' class='dropdown-content'>
     <input
@@ -38,7 +38,7 @@
     <a href='#/team/33'>SD</a>
     <a href='#/team/35'>WSH</a>
   </div>
-</div>
+</div> }}
 
 <div class='dropdown'>
   <button onclick='showPosition()' class='dropbtn'>By Position</button>
@@ -55,7 +55,7 @@
   </div>
 </div>
 
-<div class='dropdown'>
+{{! <div class='dropdown'>
   <button onclick='showPlayers()' class='dropbtn'>By Player</button>
   <div id='playerSearch' class='dropdown-content'>
     <input
@@ -63,15 +63,15 @@
       placeholder='Search..'
       id='player'
       onkeyup='playerSearch()'
-    />
-    {{!-- {{#each players as |player|}}
+    /> }}
+{{!-- {{#each players as |player|}}
       <a href='#/player/{{player.PlayerID}}'>{{player.FirstName}}
         {{player.LastName}}</a>
     {{/each}} --}}
-    <a href='#/player/10000020'>Robbie Ray</a>
+{{! <a href='#/player/10000020'>Robbie Ray</a>
     <a href='#/player/10000014'>Daniel Hudson</a>
     <a href='#/player/10000029'>Nick Ahmed</a>
   </div>
-</div>
+</div> }}
 
 <script src='./js/search.js'></script>
