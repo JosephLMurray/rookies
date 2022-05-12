@@ -18,30 +18,22 @@
   </div>
 
   <div clas = "team hidden">
- <section class='parentDiv'>
-  {{#each rosterData as |player|}}
-    <div class='grid-cols-auto flex flex-wrap justify-center justify-around'>
-      <div class='pb-5 pt-5 flip-card-container'>
-        <div class='flip-card'>
-          <div
-            class='max-w-sm rounded overflow-hidden shadow-lg flip-card-front'
-          >
-            <!-- <img class="w-full" src="../images/pitch.catch.png" alt="Sunset in the mountains"> -->
-            <img class='w-full' src='{{PhotoUrl}}' />
-            <div class='px-6 py-4 flip-card-front'>
-              <div class='font-bold text-xl mb-2'>{{FirstName}}
-                {{LastName}}</div>
-              <p>MLB Teams: {{Team}}</p>
-              <p>Bats: {{BatHand}} Throws: {{ThrowHand}}</p>
-              <p>Position: {{Position}}</p>
-            </div>
-            <div class='px-6 pt-4 pb-2'>
-              <span
-                class='inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2'
-              ></span>
-            </div>
-          </div>
-        </div>
+
+   
+    <div class="card w-96 bg-base-100 shadow-xl">
+     
+      <figure class="px-10 pt-10">
+        <img src="{{PhotoUrl}}" alt="Shoes" class="rounded-xl" />
+      </figure>
+      <div class="card-body items-center text-center">
+        <h2 class="card-title">Name: {{FirstName}} {{LastName}}</h2>
+        <p>Position:{{Position}}</p>
+        <p>Team: {{Team}}</p>
+        <p>Bat Hand: {{BatHand}}</p>
+        <div class="card-actions">
+          <button class="btn btn-primary">Add</button>
+        </div>  
+        
       </div>
     </div>
 
