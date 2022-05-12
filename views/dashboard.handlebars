@@ -1,5 +1,4 @@
-
-  <div class="hero min-h-screen bg-base-200" id ="mainHero">
+<div class="hero min-h-screen bg-base-200" id ="mainHero">
     <div class="hero-content flex-col lg:flex-row-reverse">
       <img src="../public/images/baseball-clipart-12.png" class="max-w-sm rounded-lg shadow-2xl" />
       <div>
@@ -20,22 +19,20 @@
 
   <div clas = "team hidden">
 
-   
+
     <div class="card w-96 bg-base-100 shadow-xl">
-     
+      {{!-- {{#each roster.dataValues}} --}}
       <figure class="px-10 pt-10">
         <img src="{{PhotoUrl}}" alt="Shoes" class="rounded-xl" />
       </figure>
       <div class="card-body items-center text-center">
-        <h2 class="card-title">Name: {{FirstName}} {{LastName}}</h2>
+        <h2 class="card-title">Name: {{players.FirstName}} {{LastName}}</h2>
         <p>Position:{{Position}}</p>
-        <p>Team: {{Team}}</p>
-        <p>Bat Hand: {{BatHand}}</p>
+        <p>Team: {{Player.Team}}</p>
+        <p>Bat Hand: {{playerData.BatHand}}</p>
         <div class="card-actions">
           <button class="btn btn-primary">Buy Now</button>
         </div>  
-        
       </div>
- 
     </div>
-  
+    {{!-- {{/each}} --}}
