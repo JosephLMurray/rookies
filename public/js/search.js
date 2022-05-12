@@ -1,18 +1,18 @@
-require('dotenv').config();
+// require('dotenv').config();
 
-const secretKey = process.env.SECRET_KEY;
+// const secretKey = process.env.SECRET_KEY;
 
-const showTeam = () => {
-  document.getElementById('teamSearch').classList.toggle('show');
-};
+// const showTeam = () => {
+//   document.getElementById('teamSearch').classList.toggle('show');
+// };
 
 const showPosition = () => {
   document.getElementById('positionSearch').classList.toggle('show');
 };
 
-const showPlayers = () => {
-  document.getElementById('playerSearch').classList.toggle('show');
-};
+// const showPlayers = () => {
+//   document.getElementById('playerSearch').classList.toggle('show');
+// };
 
 const playerSearch = () => {
   let input, filter, ul, li, a, i;
@@ -62,11 +62,10 @@ const teamSearch = () => {
   }
 };
 
-const searchPlayers = async () => {
+const searchPlayers = () => {
   // const team = document.querySelector('#team').value;
   // const player = document.querySelector('#player').value;
   const position = document.querySelector('#position').value;
-
   // if (team !== '') {
   //   body.team = team;
   // }
@@ -79,18 +78,14 @@ const searchPlayers = async () => {
   //   body.position = position;
   // }
 
-  const response = await fetch(`/api/players`, {
-    method: 'GET',
-    body: JSON.stringify({ position }),
-    headers: { 'Content-Type': 'application/json' }
-  });
+  fetch(`/api/players/${position}`);
 
   return response;
 };
 
 const buildAccordion = (results) => {
   let playerAccordion = '';
-  results.foreach((player) => {
+  results.forEach((player) => {
     playerAccordion +=
       `<div class="shadow-md">` +
       `<div class="tab w-full overflow-hidden border-t">` +
@@ -120,14 +115,16 @@ const buildAccordion = (results) => {
 };
 
 const getResults = () => {
-  searchPlayers()
+  const position = document.querySelector('#position').value;
+
+  fetch(`/api/players/${position}`)
     .then((response) => {
       if (response.ok) {
         // eslint-disable-next-line promise/no-nesting
         response
           .json()
           .then((data) => {
-            buildAccordion(data.results);
+            buildAccordion(data);
           })
           .catch((error) => {
             console.error(error);
