@@ -1,13 +1,13 @@
-<section class='parentDiv'>
+<section class='parentDiv flex flex-wrap justify-center'>
   {{#each rosterData as |player|}}
-    <div class='grid-cols-auto flex flex-wrap justify-center justify-around'>
-      <div class='pb-5 pt-5 flip-card-container'>
-        <div class='flip-card'>
+    <div class='grid grid-cols-auto flex flex-wrap justify-center justify-around' style="padding: 1.25rem">
+      <div class='pb-5 pt-5 w-64'>
+        {{!-- <div class='flip-card'> --}}
           <div
             class='max-w-sm rounded overflow-hidden shadow-lg flip-card-front'
           >
             <!-- <img class="w-full" src="../images/pitch.catch.png" alt="Sunset in the mountains"> -->
-            <img class='w-full' src='{{PhotoUrl}}' />
+            <img class='w-full W-64' src='{{PhotoUrl}}'/>
             <div class='px-6 py-4 flip-card-front'>
               <div class='font-bold text-xl mb-2'>{{FirstName}}
                 {{LastName}}</div>
@@ -21,7 +21,7 @@
               >#remove</span>
             </div>
           </div>
-        </div>
+        {{!-- </div> --}}
       </div>
     </div>
 

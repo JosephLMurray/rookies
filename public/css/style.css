@@ -26,6 +26,7 @@
 .parentDiv {
   width: 100vw;
   height: 100vh;
+  padding: 1.25rem;
 }
 
 .flip-card-container{
