@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Tailwind CSS Accordion</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        /* Tab content - closed */
+        .tab-content {
+            max-height: 0;
+            -webkit-transition: max-height .35s;
+            -o-transition: max-height .35s;
+            transition: max-height .35s;
+        }
+
+        /* :checked - resize to full height */
+        .tab input:checked~.tab-content {
+            max-height: 100vh;
+        }
+
+        /* Label formatting when open */
+        .tab input:checked+label {
+            /*@apply text-xl p-5 border-l-2 border-indigo-500 bg-gray-100 text-indigo*/
+            font-size: 1.25rem;
+            /*.text-xl*/
+            padding: 1.25rem;
+            /*.p-5*/
+            border-left-width: 2px;
+            /*.border-l-2*/
+            border-color: #6574cd;
+            /*.border-indigo*/
+            background-color: #f8fafc;
+            /*.bg-gray-100 */
+            color: #6574cd;
+            /*.text-indigo*/
+        }
+
+        /* Icon */
+        .tab label::after {
+            float: right;
+            right: 0;
+            top: 0;
+            display: block;
+            width: 1.5em;
+            height: 1.5em;
+            line-height: 1.5;
+            font-size: 1.25rem;
+            text-align: center;
+            -webkit-transition: all .35s;
+            -o-transition: all .35s;
+            transition: all .35s;
+        }
+
+        /* Icon formatting - closed */
+        .tab input[type=checkbox]+label::after {
+            content: "+";
+            font-weight: bold;
+            /*.font-bold*/
+            border-width: 1px;
+            /*.border*/
+            border-radius: 9999px;
+            /*.rounded-full */
+            border-color: #b8c2cc;
+            /*.border-grey*/
+        }
+
+        .tab input[type=radio]+label::after {
+            content: "\25BE";
+            font-weight: bold;
+            /*.font-bold*/
+            border-width: 1px;
+            /*.border*/
+            border-radius: 9999px;
+            /*.rounded-full */
+            border-color: #b8c2cc;
+            /*.border-grey*/
+        }
+
+        /* Icon formatting - open */
+        .tab input[type=checkbox]:checked+label::after {
+            transform: rotate(315deg);
+            background-color: #6574cd;
+            /*.bg-indigo*/
+            color: #f8fafc;
+            /*.text-grey-lightest*/
+        }
+
+        .tab input[type=radio]:checked+label::after {
+            transform: rotateX(180deg);
+            background-color: #6574cd;
+            /*.bg-indigo*/
+            color: #f8fafc;
+            /*.text-grey-lightest*/
+        }
+    </style>
+</head>
+
+<body class="font-sans container">
+    <div class="w-full md:w-3/5 mx-auto p-8">
+        <!-- INSERT/concat name for team roster here  -->
+        <p>Jonny's <strong>Jugernauts</strong></p>
+        {{!-- start incremental data  --}}
+        {{#each data}}
+        <!-- card 1  -->
+        <div class="shadow-md">
+            <div class="tab w-full overflow-hidden border-t">
+                <!-- for id="tab-multi-two(XXX)" where XXX=[i] -->
+                <input class="absolute opacity-0 " id=data.id type="checkbox" name="tabs">
+                <!-- for="tab-multi-XXX" where XXX=[i] INSERT/concat player name here -->
+                <label class="block p-1 leading-normal cursor-pointer" for=data.id>{{data.firstName}} + " " + {{data.lastName}}</label>
+                <div class="tab-content overflow-hidden border-l-2 bg-gray-100 border-indigo-500 leading-normal">
+                    <div class="flex">
+                        <div class="flex-1 w-64">
+                            <img class="w-full"
+                                src="https://s3-us-west-2.amazonaws.com/static.fantasydata.com/headshots/mlb/low-res/0.png">
+                        </div>
+                        <div class="flex-1 w-64">
+                            <!-- Pull from local info -->
+                            <p class="p-1">MLB Team: {{data.Team}}</p>
+                            <p class="p-1">Position: {{data.Category}} IF</p>
+                            <p class="p-1">Position: {{data.Position}}</p>
+                            <p class="p-1">Bats: {{data.BatHand}}</p>
+                            <p class="p-1">Throws: {{data.ThrowHand}}</p>
+                            <p class="p-1">Height(in): {{data.Height}}</p>
+                            <p class="p-1">Weight(lb): {{data.Weight}}</p>
+                            <!-- concat place-of-birth, ignore null  -->
+                            <p class="p-1">From: {{data.BirthCity}} {{data.BirthState}} {{data.BirthCountry}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    </div>
+</div>
