@@ -63,13 +63,25 @@ const teamSearch = () => {
 };
 
 const searchPlayers = async () => {
-  const team = document.querySelector('#team').value;
-  const player = document.querySelector('#player').value;
+  // const team = document.querySelector('#team').value;
+  // const player = document.querySelector('#player').value;
   const position = document.querySelector('#position').value;
+
+  // if (team !== '') {
+  //   body.team = team;
+  // }
+
+  // if (player !== '') {
+  //   body.player = player;
+  // }
+
+  // if (position !== '') {
+  //   body.position = position;
+  // }
 
   const response = await fetch(`/api/players`, {
     method: 'GET',
-    body: JSON.stringify({ team, player, position }),
+    body: JSON.stringify({ position }),
     headers: { 'Content-Type': 'application/json' }
   });
 
