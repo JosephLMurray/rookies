@@ -21,7 +21,8 @@ router.get('/users:PlayerID', async (req, res) => {
 router.get('/:id', async (req, res) => {
   try {
     const playerData = await Player.findAll({
-      where: { PositionCategory: req.params.id }
+      where: { PositionCategory: req.params.id },
+      limit: 30
     });
     const players = playerData.map((play) => play.get({ plain: true }));
     res.json(players);
