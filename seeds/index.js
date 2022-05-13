@@ -1,7 +1,7 @@
 const sequelize = require('../config/connection');
 
 const seedRoster = require('./rosterData');
-const seedPlayers = require('./newPlayers');
+const seedPlayers = require('./playerData');
 const seedTeams = require('./teamData');
 const seedUsers = require('./userData');
 
