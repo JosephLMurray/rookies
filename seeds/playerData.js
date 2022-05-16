@@ -162,7 +162,7 @@ const playerData = [
     BirthCountry: 'USA',
     PhotoUrl:
       'https://s3-us-west-2.amazonaws.com/static.fantasydata.com/headshots/mlb/low-res/10000033.png'
-  }
+  },
   {
     PlayerID: 10000034,
     TeamID: 19,

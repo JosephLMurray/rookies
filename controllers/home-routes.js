@@ -62,42 +62,6 @@ router.get('/roster/:id', withAuth, async (req, res) => {
     // console.log(rosterData);
     const rosterData = [
       {
-        PlayerID: 10000001,
-        TeamID: 17,
-        Team: 'DET',
-        PositionCategory: 'P',
-        Position: 'SP',
-        FirstName: 'Chase',
-        LastName: 'Anderson',
-        BatHand: 'R',
-        ThrowHand: 'R',
-        Height: 73,
-        Weight: 200,
-        BirthCity: 'Wichita Falls',
-        BirthState: 'TX',
-        BirthCountry: 'USA',
-        PhotoUrl:
-          'https://s3-us-west-2.amazonaws.com/static.fantasydata.com/headshots/mlb/low-res/10000001.png'
-      },
-      {
-        PlayerID: 10000005,
-        TeamID: 17,
-        Team: 'DET',
-        PositionCategory: 'P',
-        Position: 'RP',
-        FirstName: 'Andrew',
-        LastName: 'Chafin',
-        BatHand: 'R',
-        ThrowHand: 'L',
-        Height: 74,
-        Weight: 235,
-        BirthCity: 'Kettering',
-        BirthState: 'OH',
-        BirthCountry: 'USA',
-        PhotoUrl:
-          'https://s3-us-west-2.amazonaws.com/static.fantasydata.com/headshots/mlb/low-res/10000005.png'
-      },
-      {
         PlayerID: 10000007,
         TeamID: 35,
         Team: 'WSH',
